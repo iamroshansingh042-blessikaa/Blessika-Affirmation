@@ -1,0 +1,362 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --canvas-bg: #FAF7F2;
+    --card-bg: #FFFFFF;
+    --card-elevated: #FDFCFA;
+    --border-color: #EFE9DF;
+    --text-primary: #1F1617;
+    --text-secondary: #7C706D;
+    --accent-rose: #A84457;
+    --accent-sage: #476655;
+    --accent-gold: #8A6223;
+    --accent-rust: #A8483B;
+    --accent-lavender: #6D5999;
+  }
+
+  .dark {
+    --canvas-bg: #141112;
+    --card-bg: #1E191A;
+    --card-elevated: #262022;
+    --border-color: #362D30;
+    --text-primary: #FAF7F5;
+    --text-secondary: #A89F9E;
+    --accent-rose: #D47185;
+    --accent-sage: #6B947E;
+    --accent-gold: #B88B46;
+    --accent-rust: #C96859;
+    --accent-lavender: #9D88C7;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--canvas-bg);
+    color: var(--text-primary);
+  }
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-garamond {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-aclonica {
+  font-family: 'Aclonica', sans-serif;
+}
+
+.font-acme {
+  font-family: 'Acme', sans-serif;
+}
+
+.font-amatic {
+  font-family: 'Amatic SC', cursive;
+}
+
+.font-architects {
+  font-family: 'Architects Daughter', cursive;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.font-bellota {
+  font-family: 'Bellota', cursive;
+}
+
+.font-caveat-brush {
+  font-family: 'Caveat Brush', cursive;
+}
+
+.font-charmonman {
+  font-family: 'Charmonman', cursive;
+}
+
+.font-cookie {
+  font-family: 'Cookie', cursive;
+}
+
+.font-courgette {
+  font-family: 'Courgette', cursive;
+}
+
+.font-crimson {
+  font-family: 'Crimson Text', serif;
+}
+
+.font-delius {
+  font-family: 'Delius', cursive;
+}
+
+.font-exo {
+  font-family: 'Exo', sans-serif;
+}
+
+.font-fredericka {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.font-gorditas {
+  font-family: 'Gorditas', cursive;
+}
+
+.font-handlee {
+  font-family: 'Handlee', cursive;
+}
+
+.font-henny {
+  font-family: 'Henny Penny', cursive;
+}
+
+.font-homemade {
+  font-family: 'Homemade Apple', cursive;
+}
+
+.font-lobster {
+  font-family: 'Lobster', cursive;
+}
+
+.font-mansalva {
+  font-family: 'Mansalva', cursive;
+}
+
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-sacramento {
+  font-family: 'Sacramento', cursive;
+}
+
+.font-sans-modern {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-italiana {
+  font-family: 'Italiana', serif;
+}
+
+.font-marcellus {
+  font-family: 'Marcellus', serif;
+}
+
+.font-satisfy {
+  font-family: 'Satisfy', cursive;
+}
+
+.font-shadows {
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.font-kalam {
+  font-family: 'Kalam', cursive;
+}
+
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Custom scrollbar hiding for clean app feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 3D card perspective for affirmation flips */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Gentle pulsating glow for sanctuary items */
+@keyframes sacred-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+    box-shadow: 0 0 25px rgba(168, 68, 87, 0.25);
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+    box-shadow: 0 0 45px rgba(138, 98, 35, 0.35);
+  }
+}
+
+.animate-sacred-pulse {
+  animation: sacred-pulse 3s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+@keyframes float-drift-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(6px, -10px) scale(1.05);
+  }
+  66% {
+    transform: translate(-6px, -6px) scale(0.98);
+  }
+}
+
+.animate-drift {
+  animation: float-drift-slow 7s ease-in-out infinite;
+}
+
+@keyframes orbit-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: orbit-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: orbit-slow 28s linear infinite reverse;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+.animate-twinkle-1 {
+  animation: twinkle 2.2s ease-in-out infinite;
+}
+.animate-twinkle-2 {
+  animation: twinkle 3.1s ease-in-out infinite 0.7s;
+}
+.animate-twinkle-3 {
+  animation: twinkle 2.8s ease-in-out infinite 1.4s;
+}
+
+@keyframes aura-breathe {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.12);
+  }
+}
+
+.animate-aura {
+  animation: aura-breathe 4.5s ease-in-out infinite;
+}
+
+@keyframes sound-wave-pulse {
+  0%, 100% {
+    transform: scaleY(0.4);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1.3);
+    opacity: 1;
+  }
+}
+
+.animate-wave-bar {
+  animation: sound-wave-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmer-gleam {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  40%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer-gleam {
+  animation: shimmer-gleam 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ripple-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple-ring 3.5s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+
+@keyframes butterfly-flap {
+  0%, 100% {
+    transform: rotate(-10deg) scaleX(1);
+  }
+  50% {
+    transform: rotate(10deg) scaleX(0.7) translateY(-4px);
+  }
+}
+
+.animate-butterfly {
+  animation: butterfly-flap 1.6s ease-in-out infinite;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Blessikaa - Building a Blessed Life!",
+  "description": "Sanctuary for Body, Mind & Family with affirmations, 21-day quests, ambient soundscape studio, family circle safety, and life directory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
